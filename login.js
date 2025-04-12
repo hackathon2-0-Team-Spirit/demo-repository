@@ -109,7 +109,7 @@ document.getElementById("login-form")?.addEventListener("submit", async (e) => {
         showDynamicIsland(`✅ Welcome, ${userCredential.user.email}! Redirecting...`);
         console.log("Login success:", userCredential.user);
         setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "main.html";
         }, 3000);
     } catch (error) {
         showDynamicIsland(`❌ Login failed: ${error.message}`);
@@ -126,7 +126,7 @@ document.getElementById("google-login-btn")?.addEventListener("click", async () 
         showDynamicIsland(`✅ Google Sign-In successful! Welcome, ${user.email}`);
         console.log("Google login success:", user);
         setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "main.html";
         }, 3000);
     } catch (error) {
         showDynamicIsland(`❌ Google Sign-In failed: ${error.message}`);
@@ -141,7 +141,7 @@ getRedirectResult(auth)
             showDynamicIsland(`✅ Google Sign-In successful! Welcome, ${result.user.email}`);
             console.log("Google login success:", result.user);
             setTimeout(() => {
-                window.location.href = "index.html";
+                window.location.href = "main.html";
             }, 3000);
         }
     })
@@ -156,7 +156,7 @@ document.getElementById("logout-btn")?.addEventListener("click", async () => {
         showDynamicIsland("👋 Logged out successfully!");
         updateUserProfile(null);
         setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         }, 2000);
     } catch (error) {
         showDynamicIsland(`❌ Logout failed: ${error.message}`);
