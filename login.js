@@ -85,7 +85,7 @@ document.getElementById("signup-form")?.addEventListener("submit", async (e) => 
         showDynamicIsland("✅ Account created successfully! Redirecting...");
         console.log("Signup success:", userCredential.user);
         setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "main.html";
         }, 3000);
     } catch (error) {
         showDynamicIsland(`❌ Signup failed: ${error.message}`);
