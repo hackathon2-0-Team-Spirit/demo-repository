@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Clubs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+<header class="header shadow-sm" style="height: 10vh; background: #fff; display: flex; align-items: center;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="/" style="color: #333; text-decoration: none; font-weight: bold; display: flex; align-items: center;">
+                    <i class="fas fa-university fa-2x"></i>
+                    <span class="ms-2">University Name</span>
+                </a>
+            </div>
+            <div class="user-profile">
+                <a href="login.html" class="profile-link" style="color: #3897f0; transition: all 0.3s ease;">
+                    <i class="fas fa-user-circle fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="main-nav" style="height: 10vh; background: linear-gradient(to right, #3897f0, #2575fc); display: flex; align-items: center;">
+    <div class="container">
+        <ul class="nav-list" style="list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin: 0; padding: 0;">
+            <li><a href="index.html" class="active" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index1.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-users"></i> Clubs</a></li>
+            <li><a href="ttindex.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-calendar"></i> Timetable</a></li>
+            <li><a href="alumni.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-graduation-cap"></i> Alumni</a></li>
+            <li><a href="news.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-newspaper"></i> News</a></li>
+            <li><a href="help-center.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-question-circle"></i> Dashboard</a></li>
+        </ul>
+    </div>
+</nav>
+
+    
+    <div class="container">
+        <h1>University Clubs</h1>
+        <div class="clubs-grid" id="clubsGrid">
+            <!-- Clubs will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal for showing club details -->
+    <div class="modal" id="clubModal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-header">
+                <span id="clubEmoji" class="club-emoji"></span>
+                <h2 id="clubTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <h3>Upcoming Activities</h3>
+                <div id="clubEvents" class="events-list">
+                    <!-- Events will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
