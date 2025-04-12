@@ -1,0 +1,131 @@
+:root {
+    --cell-height: 80px;
+    --subject-math-bg: rgba(13, 110, 253, 0.1);
+    --subject-physics-bg: rgba(25, 135, 84, 0.1);
+    --subject-cs-bg: rgba(13, 202, 240, 0.1);
+    --subject-electronics-bg: rgba(255, 193, 7, 0.1);
+    --subject-chemistry-bg: rgba(220, 53, 69, 0.1);
+    --subject-design-bg: rgba(108, 117, 125, 0.1);
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.timetable {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.timetable.loaded {
+    opacity: 1;
+}
+
+.timetable th,
+.timetable td {
+    text-align: center;
+    vertical-align: middle;
+    min-width: 150px;
+}
+
+.timetable td {
+    height: var(--cell-height);
+    padding: 0.5rem;
+}
+
+.subject-cell {
+    height: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.subject-cell:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subject-name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.faculty-name {
+    font-size: 0.85rem;
+}
+
+.room-number {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Color coding for subjects */
+.subject-math { background-color: var(--subject-math-bg); }
+.subject-physics { background-color: var(--subject-physics-bg); }
+.subject-cs { background-color: var(--subject-cs-bg); }
+.subject-electronics { background-color: var(--subject-electronics-bg); }
+.subject-chemistry { background-color: var(--subject-chemistry-bg); }
+.subject-design { background-color: var(--subject-design-bg); }
+
+/* Faculty legend styles */
+.faculty-card {
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.faculty-card:hover {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timetable th,
+    .timetable td {
+        min-width: 120px;
+    }
+
+    .subject-name {
+        font-size: 0.9rem;
+    }
+
+    .faculty-name,
+    .room-number {
+        font-size: 0.75rem;
+    }
+}
+
+/* Loading animation */
+#loading {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Year selector buttons */
+.year-selector .btn-outline-primary.active {
+    background-color: var(--bs-primary);
+    color: #fff;
+}
+
+/* Modal customization */
+.modal-content {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

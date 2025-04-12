@@ -1,0 +1,132 @@
+<html>
+<head>
+</head>
+<body>
+
+     <!-- Notification Bar -->
+     <div class="notification-bar">
+        <div class="container">
+            <i class="fas fa-bell"></i>
+            <p class="notification-text">Welcome to the university dashboard! Check out our latest events, news updates, and more.</p>
+        </div>
+    </div>
+
+    <!-- Hero Slider -->
+    <div class="hero-slider container mt-4">
+        <div class="slider-container">
+            <div class="slider-content">
+                <div class="slide active">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <img src="iit.jpeg" alt="University Campus" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="slide-text">
+                                <h2>Discover Campus Life</h2>
+                                <p>Experience an engaging and dynamic university culture filled with academic excellence and extracurricular activities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <section class="news-section container">
+        <h2 class="section-title"><i class="fas fa-newspaper"></i> Latest News</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="news-card">
+                    <div class="news-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Academic Updates</h3>
+                    </div>
+                    <p>Latest updates on academic programs and achievements.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="news-card">
+                    <div class="news-header">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Sports Events</h3>
+                    </div>
+                    <p>Recent victories and upcoming sports competitions.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="news-card">
+                    <div class="news-header">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Upcoming Events</h3>
+                    </div>
+                    <p>Calendar of workshops, seminars, and cultural events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@university.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Slider functionality
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Change slide every 5 seconds
+            setInterval(nextSlide, 5000);
+
+            // Notification bar animation reset
+            const notificationText = document.querySelector('.notification-text');
+            notificationText.addEventListener('animationend', function() {
+                this.style.animation = 'none';
+                this.offsetHeight; // Trigger reflow
+                this.style.animation = 'scroll 20s linear infinite';
+            });
+
+            // Add active class to current navigation item
+            const currentLocation = window.location.href;
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

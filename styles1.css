@@ -1,0 +1,463 @@
+:root {
+    --primary: #0f172a;
+    --background: #f8fafc;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --card: #ffffff;
+    --accent: #03070d;
+}
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--card);
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 3px rgb(10, 2, 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--muted);
+    text-decoration: none;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+    border-bottom-color: var(--accent);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgb(18, 1, 1);
+}
+
+/* Alumni Grid */
+.alumni-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.alumni-section h2 {
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.alumni-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.alumni-profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.profile-card {
+    background: var(--card);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--accent);
+}
+
+.profile-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 4px solid var(--accent);
+    padding: 4px;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover img {
+    transform: scale(1.05);
+}
+
+.profile-card h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.profile-card p {
+    color: var(--muted);
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.profile-card p:last-of-type {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid var(--accent);
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.social-link:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .alumni-profiles {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .alumni-grid {
+        padding: 1rem;
+    }
+
+    .profile-card {
+        padding: 1.5rem;
+    }
+
+    .profile-card img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Layout */
+/*Page Sections*/
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input,
+select,
+textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-meta {
+    color: var(--muted);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.card-content {
+    color: var(--text);
+}
+
+/* Discussion Form */
+.discussion-form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Timetable */
+.timetable-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    background: var(--background);
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .login-hero {
+        display: none;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .nav-links {
+        margin-top: 0;
+    }
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+/* Login Page */
+.login-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--card);
+}
+
+.login-form h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.login-form .subtitle {
+    color: var(--muted);
+    margin-bottom: 2rem;
+}
+
+.login-hero {
+    background: var(--primary);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.login-hero ul {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.login-hero li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.login-hero li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+}

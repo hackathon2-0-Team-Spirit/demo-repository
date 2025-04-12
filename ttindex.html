@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Timetable Viewer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="ttstyles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header shadow-sm" style="height: 10vh; background: #fff; display: flex; align-items: center;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="/" style="color: #333; text-decoration: none; font-weight: bold; display: flex; align-items: center;">
+                    <i class="fas fa-university fa-2x"></i>
+                    <span class="ms-2">University Name</span>
+                </a>
+            </div>
+            <div class="user-profile">
+                <a href="login.html" class="profile-link" style="color: #3897f0; transition: all 0.3s ease;">
+                    <i class="fas fa-user-circle fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="main-nav" style="height: 10vh; background: linear-gradient(to right, #3897f0, #2575fc); display: flex; align-items: center;">
+    <div class="container">
+        <ul class="nav-list" style="list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin: 0; padding: 0;">
+            <li><a href="index.html" class="active" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index1.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-users"></i> Clubs</a></li>
+            <li><a href="ttindex.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-calendar"></i> Timetable</a></li>
+            <li><a href="alumni.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-graduation-cap"></i> Alumni</a></li>
+            <li><a href="news.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-newspaper"></i> News</a></li>
+            <li><a href="help-center.html" style="color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px;"><i class="fas fa-question-circle"></i> Help</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container py-4">
+        <header class="text-center mb-4">
+            <h1>Engineering Timetable</h1>
+            <p class="lead">View class schedules for all engineering years</p>
+        </header>
+
+        <div class="year-selector mb-4">
+            <div class="btn-group w-100" role="group" aria-label="Year selector">
+                <button type="button" class="btn btn-outline-primary active" data-year="1">First Year</button>
+                <button type="button" class="btn btn-outline-primary" data-year="2">Second Year</button>
+                <button type="button" class="btn btn-outline-primary" data-year="3">Third Year</button>
+                <button type="button" class="btn btn-outline-primary" data-year="4">Fourth Year</button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <div id="loading" class="text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <table class="table table-bordered timetable" id="timetableView">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Timetable content will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legend mt-4">
+            <h5>Faculty Directory</h5>
+            <div class="row g-3" id="facultyLegend">
+                <!-- Faculty legend will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Subject Details Modal -->
+    <div class="modal fade" id="subjectModal" tabindex="-1" aria-labelledby="subjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subjectModalLabel">Subject Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="ttscript.js"></script>
+</body>
+</html> 

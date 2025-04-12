@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="login.css">
+    <style>
+        /* Dynamic Island Box */
+       /* Dynamic Island Box */
+/* Dynamic Island - Smooth Bounce and Fade */
+.dynamic-island {
+    position: fixed;
+    top: -50px; /* Initially hidden above the screen */
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: #3897f0;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease-out, opacity 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999; /* Ensures it's above everything */
+}
+
+/* Show animation */
+.dynamic-island.show {
+    top: 20px; /* Moves down smoothly */
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+    animation: bounceIn 0.5s ease-out;
+}
+
+/* Hide animation */
+.dynamic-island.hide {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-out;
+}
+
+/* Bounce effect */
+@keyframes bounceIn {
+    0% { transform: translateX(-50%) scale(0.8); }
+    50% { transform: translateX(-50%) scale(1.1); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+   
+    <br>
+    <div class="container" id="container">
+        <!-- Signup Form -->
+        <div class="form-container sign-up-container">
+            <form id="signup-form">
+                <h1>Create Account</h1>
+                <span>or use your email for registration</span>
+                <input type="text" id="signup-name" placeholder="Full Name" required />
+                <input type="email" id="signup-email" placeholder="Email" required />
+                <input type="password" id="signup-password" placeholder="Password" required />
+                <button type="submit" id="signup-btn"><b>Sign Up</b></button>
+                <button type="button" id="google-login-btn">
+                    <i class="fab fa-google"></i> Sign in with Google
+                </button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-container sign-in-container">
+            <form id="login-form">
+                <h1>Sign in</h1>
+                <span>or use your account</span>
+                <input type="email" id="login-email" placeholder="Email" required />
+                <input type="password" id="login-password" placeholder="Password" required />
+                <button type="submit" id="login-btn">Sign In</button>
+            </form>
+        </div>
+
+         <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To stay connected, please log in with your details</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your details and start your journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <!-- Dynamic Island Notification -->
+       <!-- Dynamic Island Notification -->
+<div class="dynamic-island" id="dynamic-island">
+    <i class="fas fa-check-circle"></i>
+    <p id="dynamic-message">You are successfully logged in!</p>
+</div>
+
+    </div>
+    <script src="transition.js"></script>
+
+    <!-- Scripts -->
+    <script type="module" src="login.js"></script>
+</body>
+</html>
